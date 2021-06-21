@@ -65,6 +65,5 @@
   <modules>
     <module>service1</module>
     <module>service2</module>
-    <module>zipkin-service</module>
   </modules>
 </project>
