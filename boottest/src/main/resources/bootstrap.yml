@@ -1,0 +1,39 @@
+#spring:
+#  application:
+#    name: athena-api
+#  cloud:
+#      config:
+#        discovery:
+#          enabled: true
+#          serviceId: config-server
+#        profile: ${spring.profiles.active}
+#        password: baiwang1234
+#        username: user
+#        label: master
+#  thymeleaf:
+#    mode: LEGACYHTML5
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://registerserver-pool.${DOMAIN}:8889/eureka
+##      defaultZone: http://127.0.0.1:8889/eureka
+#  instance:
+#    prefer-ip-address: true
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#
+#server:
+#  port: 7000
+#  tomcat:
+#    uri-encoding: UTF-8
+#  context-path: /athena-api
+#
+#logging:
+#  level:
+#    com.baiwang.athena.api.mapper: debug
+
+
+mybatis:
+mybatis-plus:
+  type-aliases-package: org.wangjj.practice.entity
+  #mapper-locations: classpath*:mapper/*.xml
+
