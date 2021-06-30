@@ -1,7 +1,9 @@
 package org.wangjj.practice.service1.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.wangjj.practice.serviceapi.DemoService;
 
 /**
  * ClassName: TestController <br/>
@@ -14,8 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
+
+    @Reference(version = "1.0.0", check = false)
+    private DemoService demoService;
+
     @GetMapping(value = "/req")
     public String test() {
-        return "";
+//        return "1";
+        return demoService.getMessage();
     }
 }

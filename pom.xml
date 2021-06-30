@@ -8,7 +8,7 @@
   <artifactId>practice</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>service1</name>
+  <name>practice</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -65,5 +65,6 @@
   <modules>
     <module>service1</module>
     <module>service2</module>
+    <module>service-api</module>
   </modules>
 </project>
