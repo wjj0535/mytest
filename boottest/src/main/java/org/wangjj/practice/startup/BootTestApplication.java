@@ -28,7 +28,6 @@ import java.util.LinkedHashSet;
 @SpringBootApplication
 @ComponentScan(basePackages = "org.wangjj.practice.*")
 @MapperScan(basePackages = "org.wangjj.practice.*")
-@EnableAutoConfiguration
 public class BootTestApplication {
 
     public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException
