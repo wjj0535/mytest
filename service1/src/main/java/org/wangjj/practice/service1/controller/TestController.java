@@ -1,9 +1,11 @@
 package org.wangjj.practice.service1.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.fastjson.JSON;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.wangjj.practice.serviceapi.DemoService;
+import org.wangjj.practice.serviceapi.domain.TestModel;
+import org.wangjj.practice.serviceapi.service.DemoService;
 
 /**
  * ClassName: TestController <br/>
@@ -23,6 +25,9 @@ public class TestController {
     @GetMapping(value = "/req")
     public String test() {
 //        return "1";
-        return demoService.getMessage();
+        TestModel testModel = new TestModel();
+        testModel.setActionName("test");
+        testModel.setMsg("this is a test!");
+        return demoService.process(JSON.toJSONString(testModel));
     }
 }

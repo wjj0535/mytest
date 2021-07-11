@@ -1,4 +1,4 @@
-package org.wangjj.practice.serviceapi;
+package org.wangjj.practice.serviceapi.service;
 
 /**
  * ClassName: DemoService <br/>
@@ -12,4 +12,6 @@ package org.wangjj.practice.serviceapi;
 
 public interface DemoService {
     String getMessage();
+
+    String process(String model);
 }
