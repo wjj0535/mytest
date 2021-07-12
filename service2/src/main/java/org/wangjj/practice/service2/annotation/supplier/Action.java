@@ -1,4 +1,4 @@
-package org.wangjj.practice.service2.annotation;
+package org.wangjj.practice.service2.annotation.supplier;
 
 import org.springframework.stereotype.Component;
 

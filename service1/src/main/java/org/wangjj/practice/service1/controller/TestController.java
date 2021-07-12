@@ -4,7 +4,8 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.wangjj.practice.serviceapi.domain.TestModel;
+import org.wangjj.practice.serviceapi.busiaction.ActionInfo;
+import org.wangjj.practice.serviceapi.domain.test.TestModel;
 import org.wangjj.practice.serviceapi.service.DemoService;
 
 /**
@@ -26,8 +27,11 @@ public class TestController {
     public String test() {
 //        return "1";
         TestModel testModel = new TestModel();
-        testModel.setActionName("test");
+        ActionInfo info = new ActionInfo();
+        info.setAction("test");
+        info.setVersion("1.0");
         testModel.setMsg("this is a test!");
+        testModel.setActionInfo(info);
         return demoService.process(JSON.toJSONString(testModel));
     }
 }

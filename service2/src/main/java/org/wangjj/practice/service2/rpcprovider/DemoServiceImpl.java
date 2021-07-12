@@ -1,4 +1,4 @@
-package org.wangjj.practice.service2.provider;
+package org.wangjj.practice.service2.rpcprovider;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
@@ -6,7 +6,9 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.wangjj.practice.service2.service.StandProcess;
+import org.wangjj.practice.service2.service.ActionManager;
+import org.wangjj.practice.service2.service.middleground.StandProcess;
+import org.wangjj.practice.serviceapi.busiaction.ActionInfo;
 import org.wangjj.practice.serviceapi.service.DemoService;
 
 /**
@@ -25,14 +27,15 @@ public class DemoServiceImpl implements DemoService, ApplicationContextAware {
 
     @Override
     public String getMessage() {
-        return "this is my first dubbo, haha!";
+        return "";
     }
 
     @Override
     public String process(String model) {
         JSONObject jsonObject = JSON.parseObject(model);
-        String actionName = jsonObject.getString("actionName");
-        StandProcess process = (StandProcess)applicationContext.getBean("default_"+actionName+"_1.0");
+        ActionInfo actionInfo = jsonObject.getObject("actionInfo", ActionInfo.class);
+//        String actionName = jsonObject.getString("actionName");
+        StandProcess process = ActionManager.getBean(actionInfo);
         return process.handle(model);
     }
 
