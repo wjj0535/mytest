@@ -1,6 +1,5 @@
 package org.wangjj.practice;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
@@ -14,11 +13,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.wangjj.practice.entity.MpTest;
 import org.wangjj.practice.mapper.MpTestMapper;
-import org.wangjj.practice.startup.BootTestApplication;
-
-import java.util.List;
 
 /**
  * ClassName: MpTest <br/>

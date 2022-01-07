@@ -1,20 +1,15 @@
-package org.wangjj.practice.startup;
+package org.wangjj.practice;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import javax.crypto.*;
-import javax.crypto.spec.DESKeySpec;
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
 import java.security.InvalidKeyException;
-import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.util.LinkedHashSet;
 
 /**
  * ClassName: BootTestApplication <br/>
